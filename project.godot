@@ -10,13 +10,19 @@ config_version=5
 
 [application]
 
-config/name="biteandbattle"
+config/name="bite_and_battle"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://art/icon.svg"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [input]
 
