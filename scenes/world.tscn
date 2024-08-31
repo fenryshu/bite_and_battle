@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmegvftt77tuj"]
+[gd_scene load_steps=14 format=3 uid="uid://bmegvftt77tuj"]
 
 [ext_resource type="Texture2D" uid="uid://dl6wln1wlkr3j" path="res://art/tilesets/plains.png" id="1_8ll1j"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_ojc8h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyk7fc8y8ihuw" path="res://scenes/player.tscn" id="4_6n5qv"]
 [ext_resource type="PackedScene" uid="uid://dvi6vrnfmy13l" path="res://scenes/enemy.tscn" id="5_3bgqi"]
 [ext_resource type="PackedScene" uid="uid://3son4v4ikgsy" path="res://scenes/apple_tree.tscn" id="7_thfkc"]
+[ext_resource type="PackedScene" uid="uid://bssbu0qtf1kli" path="res://inventory/inv_ui.tscn" id="8_npv7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27jkh"]
 texture = ExtResource("1_8ll1j")
@@ -120,6 +121,13 @@ position = Vector2(104, 72)
 
 [node name="apple_tree2" parent="." instance=ExtResource("7_thfkc")]
 position = Vector2(16, 160)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("8_npv7t")]
+offset_top = -192.0
+offset_bottom = -127.0
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
