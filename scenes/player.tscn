@@ -491,6 +491,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Inv_UI" parent="." instance=ExtResource("4_ou8t4")]
+visible = false
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
