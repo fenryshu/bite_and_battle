@@ -1,7 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://dyk7fc8y8ihuw"]
+[gd_scene load_steps=59 format=3 uid="uid://dyk7fc8y8ihuw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7r1mu"]
 [ext_resource type="Texture2D" uid="uid://ck8av6ed2ggxs" path="res://art/characters/player.png" id="2_k7bjp"]
+[ext_resource type="Resource" uid="uid://rp1eomn2xibb" path="res://inventory/playerinv.tres" id="2_r62hw"]
+[ext_resource type="PackedScene" uid="uid://bssbu0qtf1kli" path="res://inventory/inv_ui.tscn" id="4_ou8t4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_38bfo"]
 atlas = ExtResource("2_k7bjp")
@@ -424,6 +426,7 @@ y_sort_enabled = true
 position = Vector2(38, 0)
 collision_layer = 3
 script = ExtResource("1_7r1mu")
+inv = ExtResource("2_r62hw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h2lnq")
@@ -486,6 +489,8 @@ show_percentage = false
 [node name="regen_timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Inv_UI" parent="." instance=ExtResource("4_ou8t4")]
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

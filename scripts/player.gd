@@ -8,6 +8,8 @@ var player_alive = true
 
 var attack_ip = false 
 
+@export var inv: Inv
+
 
 const speed = 100
 var current_dir = "none"

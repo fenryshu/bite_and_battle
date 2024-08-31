@@ -31,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qt2uf"]
-radius = 38.0
+radius = 22.2036
 
 [node name="apple_tree" type="Node2D"]
 script = ExtResource("1_jgphg")
