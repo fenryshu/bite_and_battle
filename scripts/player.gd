@@ -11,6 +11,8 @@ var attack_ip = false
 @export var inv: Inv
 
 
+
+
 const speed = 100
 var current_dir = "none"
 
@@ -168,3 +170,6 @@ func _on_regen_time_timeout() -> void:
 			health = max_health
 		if health <= 0:
 			health = 0
+
+func collect(item):
+	inv.insert(item)

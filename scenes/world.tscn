@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmegvftt77tuj"]
+[gd_scene load_steps=15 format=3 uid="uid://bmegvftt77tuj"]
 
 [ext_resource type="Texture2D" uid="uid://dl6wln1wlkr3j" path="res://art/tilesets/plains.png" id="1_8ll1j"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_ojc8h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvi6vrnfmy13l" path="res://scenes/enemy.tscn" id="5_3bgqi"]
 [ext_resource type="PackedScene" uid="uid://3son4v4ikgsy" path="res://scenes/apple_tree.tscn" id="7_thfkc"]
 [ext_resource type="PackedScene" uid="uid://bssbu0qtf1kli" path="res://inventory/inv_ui.tscn" id="8_npv7t"]
+[ext_resource type="PackedScene" uid="uid://c727cn764qo42" path="res://scenes/stick_collectable.tscn" id="9_6u5ns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27jkh"]
 texture = ExtResource("1_8ll1j")
@@ -128,6 +129,12 @@ position = Vector2(16, 160)
 offset_top = -192.0
 offset_bottom = -127.0
 scale = Vector2(3, 3)
+
+[node name="stick_collectable" parent="." instance=ExtResource("9_6u5ns")]
+position = Vector2(128, 208)
+
+[node name="stick_collectable2" parent="." instance=ExtResource("9_6u5ns")]
+position = Vector2(240, 192)
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
